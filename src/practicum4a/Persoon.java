@@ -1,4 +1,4 @@
-package Huis;
+package practicum4a;
 
 public class Persoon {
     private String naam;

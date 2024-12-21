@@ -1,4 +1,4 @@
-package Zwembad;
+package practicum2a;
 
 public class Zwembad {
 

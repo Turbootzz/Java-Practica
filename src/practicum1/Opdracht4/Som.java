@@ -1,4 +1,4 @@
-package Opdracht4;
+package practicum1.Opdracht4;
 
 public class Som {
 

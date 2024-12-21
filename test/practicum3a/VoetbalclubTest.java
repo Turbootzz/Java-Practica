@@ -1,4 +1,4 @@
-package Voetbal;
+package practicum3a;
 
 import org.junit.jupiter.api.Test;
 

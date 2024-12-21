@@ -1,4 +1,4 @@
-package Uitgeverij;
+package practicum7;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package practicum6a;
+package practicum6;
 
 import java.util.ArrayList;
 import java.util.List;

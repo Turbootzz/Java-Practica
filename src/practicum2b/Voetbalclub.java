@@ -1,4 +1,4 @@
-package Voetbal;
+package practicum2b;
 
 public class Voetbalclub {
     private String naam;

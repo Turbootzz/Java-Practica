@@ -1,4 +1,4 @@
-package Uitgeverij;
+package practicum7;
 
 public class VervangProces implements OpmaakProces {
 

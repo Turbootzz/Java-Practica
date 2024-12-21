@@ -1,4 +1,4 @@
-package Practicum8;
+package practicum8;
 
 abstract class Voertuig {
 

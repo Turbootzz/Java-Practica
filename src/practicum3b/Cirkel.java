@@ -1,4 +1,4 @@
-package Cirkel;
+package practicum3b;
 
 public class Cirkel {
 

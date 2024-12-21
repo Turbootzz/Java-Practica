@@ -1,4 +1,4 @@
-package Opdracht2;
+package practicum1.Opdracht2;
 
 public class Main {
 }

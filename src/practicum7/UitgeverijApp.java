@@ -1,4 +1,4 @@
-package Uitgeverij;
+package practicum7;
 
 public class UitgeverijApp {
     public static void main(String[] args) {

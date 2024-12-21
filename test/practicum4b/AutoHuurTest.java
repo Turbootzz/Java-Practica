@@ -1,6 +1,5 @@
-import AutoHuur.Auto;
-import AutoHuur.Klant;
-import AutoHuur.AutoHuur;
+package practicum4b;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

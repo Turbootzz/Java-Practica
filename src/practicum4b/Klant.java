@@ -1,4 +1,4 @@
-package AutoHuur;
+package practicum4b;
 
 public class Klant {
     private String naam;

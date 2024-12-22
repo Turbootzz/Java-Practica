@@ -1,6 +1,6 @@
 package practicum8;
 
-abstract class Voertuig {
+abstract class Voertuig implements Goed {
 
     private String type;
     protected double nieuwprijs;
@@ -12,7 +12,7 @@ abstract class Voertuig {
         this.bouwjaar = jr;
     }
 
-    public boolean equals(Object obj) {
+    public boolean equals(Goed g) {
         return false;
     }
 

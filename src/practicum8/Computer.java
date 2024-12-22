@@ -1,6 +1,6 @@
 package practicum8;
 
-public class Computer {
+public class Computer implements Goed {
     private String type;
     private String macAdres;
     private double aanschafPrijs;
@@ -13,9 +13,9 @@ public class Computer {
         this.productieJaar = jr;
     }
 
-    public double huidigeWaarde() {}
+    public double huidigeWaarde() { return aanschafPrijs; }
 
-    public boolean equals(Computer comp) {} // nog niet zeker of obj goed is
+    public boolean equals(Goed g) { return false; }
 
     public String toString() {
         return "";

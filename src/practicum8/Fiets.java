@@ -1,6 +1,6 @@
 package practicum8;
 
-public class Fiets  extends Voertuig {
+public class Fiets extends Voertuig {
 
     private int framenummer;
 
@@ -10,10 +10,10 @@ public class Fiets  extends Voertuig {
     }
 
     public double huidigeWaarde() {
-        return;
+        return super.nieuwprijs;
     }
 
-    public boolean equals(Object obj) {
+    public boolean equals(Goed g) {
         return false;
     }
 }

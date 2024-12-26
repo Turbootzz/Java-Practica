@@ -13,11 +13,20 @@ public class Computer implements Goed {
         this.productieJaar = jr;
     }
 
-    public double huidigeWaarde() { return aanschafPrijs; }
+    public double huidigeWaarde() {
+        int huidigJaar = java.time.Year.now().getValue();
+        int jarenVerschil = huidigJaar - productieJaar;
+        return aanschafPrijs * Math.pow(0.6, jarenVerschil);
+    }
 
-    public boolean equals(Goed g) { return false; }
+    public boolean equals(Goed g) {
+        if (this == g) return true;
+        if (g == null || getClass() != g.getClass()) return false;
+        Computer computer = (Computer) g;
+        return macAdres.equals(computer.macAdres);
+    }
 
     public String toString() {
-        return "";
+        return "Computer: " + type + " met MAC-adres " + macAdres + " heeft een waarde van: €" + huidigeWaarde();
     }
 }

@@ -10,22 +10,21 @@ public class BedrijfsInventaris {
     public BedrijfsInventaris(String nm, double bud) {
         bedrijfsnaam = nm;
         budget = bud;
+        alleGoederen = new ArrayList<>();
     }
 
     public void schafAan(Goed g) {
-
-        if(g instanceof Voertuig) {
-            System.out.println("Goed zit al in de inventaris.");
+        if (alleGoederen.contains(g)) {
+            System.out.println("Het goed is al in de inventaris opgenomen.");
             return;
         }
-        if(g.huidigeWaarde() > budget) {
-            System.out.println("Je hebt niet genoeg budget!");
+        if (g.huidigeWaarde() > budget) {
+            System.out.println("Onvoldoende budget om dit goed aan te schaffen.");
             return;
         }
-        else {
-            alleGoederen.add(g);
-            budget -= g.huidigeWaarde();
-        }
+        alleGoederen.add(g);
+        budget -= g.huidigeWaarde();
+        System.out.println(g + " is toegevoegd aan de inventaris.");
     }
 
     public String toString() {

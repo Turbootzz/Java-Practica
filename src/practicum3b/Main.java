@@ -17,6 +17,6 @@ public class Main {
 }
 
 // Wat gebeurd er als try catch block weg wordt gehaald:
-// Je krijgt dat null null resultaat
-// dat komt omdat cirkel 1 (c1) als null wordt gezet buiten het try block en hetzelfde geldt voor c2
-// de try geeft ze een waarde
+// de code compileert nog steeds
+// bij het aanmaken van c2 met een radius van 0 wordt een IllegalArgumentException gegooid
+// de applicatie stopt en de rest wordt niet uitgevoerd

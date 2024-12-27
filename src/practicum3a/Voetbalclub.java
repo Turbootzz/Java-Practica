@@ -15,14 +15,7 @@ public class Voetbalclub {
         aantalGewonnen = 0;
         aantalGelijk = 0;
         aantalVerloren = 0;
-        //verifyName();
     }
-
-//    private void verifyName() {
-//        if(this.naam == null || naam.isBlank()) {
-//            throw new IllegalArgumentException("Naam mag niet leeg zijn");
-//        }
-//    }
 
     public String getNaam() { return this.naam; }
 
@@ -52,7 +45,7 @@ public class Voetbalclub {
     public String toString() {
         String s = naam.trim() + " " + aantalGespeeld() + " " + aantalGewonnen + " " + aantalGelijk + " " + aantalVerloren + " " + aantalPunten() + " ";
         return String.format("%s %d %d %d %d %d",
-                naam.trim(), // Verwijder overbodige spaties
+                naam.trim(),
                 aantalGespeeld(),
                 aantalGewonnen,
                 aantalGelijk,

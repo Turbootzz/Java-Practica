@@ -35,9 +35,9 @@ class VoetbalclubTest {
     @Test
     public void test_ToString_CorrecteOutput() {
         Voetbalclub club = new Voetbalclub("Feijenoord");
-        club.verwerkResultaat('w'); // 1 winst
-        club.verwerkResultaat('g'); // 1 gelijkspel
-        club.verwerkResultaat('v'); // 1 verlies
+        club.verwerkResultaat('w');
+        club.verwerkResultaat('g');
+        club.verwerkResultaat('v');
 
         String expected = "Feijenoord 3 1 1 1 4";
         String actual = club.toString();

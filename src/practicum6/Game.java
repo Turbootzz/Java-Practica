@@ -1,6 +1,6 @@
 package practicum6;
 
-import java.util.ArrayList;
+import java.util.Objects;
 
 public class Game {
 
@@ -12,8 +12,6 @@ public class Game {
         this.naam = nm;
         this.releaseJaar = rJ;
         this.nieuwprijs = nwpr;
-        ArrayList<String> Game = new ArrayList<String>();
-        Game.add(naam);
     }
 
     public String getNaam() { return naam; }
@@ -26,9 +24,9 @@ public class Game {
     @Override
     public boolean equals(Object obj)   {
         if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Game game = (Game) obj;
-        return releaseJaar == game.releaseJaar && naam.equals(game.naam);
+        if (!(obj instanceof Game game)) return false;
+        return releaseJaar == game.releaseJaar &&
+                (Objects.equals(naam, game.naam));
     }
 
     @Override

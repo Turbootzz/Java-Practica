@@ -1,7 +1,5 @@
 package practicum6;
 
-import java.util.Objects;
-
 public class Game {
 
     private String naam;
@@ -22,11 +20,10 @@ public class Game {
     }
 
     @Override
-    public boolean equals(Object obj)   {
-        if (this == obj) return true;
-        if (!(obj instanceof Game game)) return false;
+    public boolean equals(Object andereObject)   {
+        if (!(andereObject instanceof Game game)) return false;
         return releaseJaar == game.releaseJaar &&
-                (Objects.equals(naam, game.naam));
+                this.naam.equals(game.naam);
     }
 
     @Override

@@ -1,5 +1,7 @@
 package practicum8;
 
+import practicum9a.Utils;
+
 public class Computer implements Goed {
     private String type;
     private String macAdres;
@@ -27,6 +29,6 @@ public class Computer implements Goed {
     }
 
     public String toString() {
-        return "Computer: " + type + " met MAC-adres " + macAdres + " heeft een waarde van: €" + huidigeWaarde();
+        return "Computer: " + type + " met MAC-adres " + macAdres + " heeft een waarde van: €" + Utils.euroBedrag(huidigeWaarde());
     }
 }

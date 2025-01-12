@@ -7,7 +7,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="322.0" prefWidth="504.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="practicum9b.hotel.userinterface.BoekingenController">
    <children>
       <Label layoutX="50.0" layoutY="26.0" text="Voer gegevens in!" />
@@ -16,12 +15,12 @@
       <Label layoutX="50.0" layoutY="149.0" text="Aankomstdatum:" />
       <Label layoutX="50.0" layoutY="189.0" text="Vertrekdatum:" />
       <Label layoutX="50.0" layoutY="229.0" text="Kamertype:" />
-      <TextField id="boeking-naam" layoutX="179.0" layoutY="68.0" prefHeight="25.0" prefWidth="282.0" />
-      <TextField id="boeking-adres" layoutX="179.0" layoutY="105.0" prefHeight="25.0" prefWidth="282.0" />
-      <DatePicker id="boeking-aankomstdatum" layoutX="179.0" layoutY="145.0" prefHeight="25.0" prefWidth="282.0" />
-      <DatePicker id="boeking-vertrekdatum" layoutX="179.0" layoutY="185.0" prefHeight="25.0" prefWidth="282.0" />
-      <ComboBox id="boeking-kamertype" layoutX="179.0" layoutY="225.0" prefHeight="25.0" prefWidth="282.0" />
-      <Button id="boeking-boek" layoutX="415.0" layoutY="275.0" mnemonicParsing="false" onAction="#Boek" text="Boek" />
+      <TextField id="boeking-naam" fx:id="naam" layoutX="179.0" layoutY="68.0" prefHeight="25.0" prefWidth="282.0" />
+      <TextField id="boeking-adres" fx:id="adres" layoutX="179.0" layoutY="105.0" prefHeight="25.0" prefWidth="282.0" />
+      <DatePicker id="boeking-aankomstdatum" fx:id="aankomstdatum" layoutX="179.0" layoutY="145.0" prefHeight="25.0" prefWidth="282.0" />
+      <DatePicker id="boeking-vertrekdatum" fx:id="vertrekdatum" layoutX="179.0" layoutY="185.0" prefHeight="25.0" prefWidth="282.0" />
+      <ComboBox id="boeking-kamertype" fx:id="kamertype" layoutX="179.0" layoutY="225.0" prefHeight="25.0" prefWidth="282.0" />
+      <Button id="boeking-boek" layoutX="415.0" layoutY="275.0" mnemonicParsing="false" onAction="#updateBoekingenOverzicht" text="Boek" />
       <Button id="boeking-reset" layoutX="351.0" layoutY="275.0" mnemonicParsing="false" onAction="#Reset" text="Reset" />
    </children>
 </AnchorPane>

@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="322.0" prefWidth="504.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="practicum9b.hotel.userinterface.BoekingenController">
    <children>
-      <Label layoutX="50.0" layoutY="26.0" text="Voer gegevens in!" />
+      <Label fx:id="titel" layoutX="50.0" layoutY="26.0" text="Voer gegevens in!" />
       <Label layoutX="50.0" layoutY="69.0" text="Naam:" />
       <Label layoutX="50.0" layoutY="109.0" text="Adres:" />
       <Label layoutX="50.0" layoutY="149.0" text="Aankomstdatum:" />

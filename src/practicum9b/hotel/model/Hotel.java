@@ -31,6 +31,7 @@ public class Hotel {
 		}
 	}
 
+
 	public String getNaam() {
 		return naam;
 	}

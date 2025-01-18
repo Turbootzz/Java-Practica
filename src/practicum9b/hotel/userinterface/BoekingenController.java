@@ -97,6 +97,8 @@ public class BoekingenController {
 
     @FXML
     public void Reset(ActionEvent event) {
+        titel.setText("Voer gegevens in!");
+        titel.setStyle("-fx-text-fill: default;");
         naam.setText("");
         adres.setText("");
         aankomstdatum.setValue(null);

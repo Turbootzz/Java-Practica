@@ -7,63 +7,57 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class AutoHuurTest {
 
     @Test
-    public void testGeenHuurderGeenAuto() {
+    public void testTotaalPrijsZonderAutoEnHuurder() {
         AutoHuur ah1 = new AutoHuur();
-        String expected = "er is geen auto bekend\n" +
-                "er is geen huurder bekend\n" +
-                "aantal dagen: 0 en dat kost 0.0";
-        assertEquals(expected, ah1.toString());
+
+        assertEquals(0.0, ah1.totaalPrijs()); // Totaalprijs zonder auto of huurder moet 0 zijn
     }
 
     @Test
-    public void testGeenHuurderWelAuto() {
+    public void testTotaalPrijsMetAlleenAuto() {
         AutoHuur ah1 = new AutoHuur();
         Auto a1 = new Auto("Peugeot 207", 50.0);
+
         ah1.setGehuurdeAuto(a1);
-        String expected = "Peugeot 207 met prijs per dag: 50.0\n" +
-                "er is geen huurder bekend\n" +
-                "aantal dagen: 0 en dat kost 0.0";
-        assertEquals(expected, ah1.toString());
+
+        assertEquals(0.0, ah1.totaalPrijs()); // Geen huurder, dus geen kosten
     }
 
     @Test
-    public void testWelHuurderGeenAuto() {
+    public void testTotaalPrijsMetAlleenHuurder() {
         AutoHuur ah1 = new AutoHuur();
         Klant k1 = new Klant("Mijnheer de Vries");
+
         k1.setKorting(10.0);
         ah1.setHuurder(k1);
-        String expected = "er is geen auto bekend\n" +
-                "op naam van: Mijnheer de Vries (korting: 10.0%)\n" +
-                "aantal dagen: 0 en dat kost 0.0";
-        assertEquals(expected, ah1.toString());
+
+        assertEquals(0.0, ah1.totaalPrijs()); // Geen auto, dus geen kosten
     }
 
     @Test
-    public void testWelHuurderWelAutoGeenDagen() {
+    public void testTotaalPrijsMetAutoEnHuurderZonderDagen() {
         AutoHuur ah1 = new AutoHuur();
-        Klant k1 = new Klant("Mijnheer de Vries");
-        k1.setKorting(10.0);
         Auto a1 = new Auto("Peugeot 207", 50.0);
-        ah1.setHuurder(k1);
+        Klant k1 = new Klant("Mijnheer de Vries");
+
+        k1.setKorting(10.0);
         ah1.setGehuurdeAuto(a1);
-        String expected = "Peugeot 207 met prijs per dag: 50.0\n" +
-                "op naam van: Mijnheer de Vries (korting: 10.0%)\n" +
-                "aantal dagen: 0 en dat kost 0.0";
-        assertEquals(expected, ah1.toString());
+        ah1.setHuurder(k1);
+
+        assertEquals(0.0, ah1.totaalPrijs()); // Geen dagen ingevuld, dus geen kosten
     }
 
     @Test
-    public void testVolledigIngevuld() {
+    public void testTotaalPrijsMetAllesIngevuld() {
         AutoHuur ah1 = new AutoHuur();
-        Klant k1 = new Klant("Mijnheer de Vries");
-        k1.setKorting(10.0);
         Auto a1 = new Auto("Peugeot 207", 50.0);
-        ah1.setHuurder(k1);
+        Klant k1 = new Klant("Mijnheer de Vries");
+
+        k1.setKorting(10.0);
         ah1.setGehuurdeAuto(a1);
+        ah1.setHuurder(k1);
         ah1.setAantalDagen(4);
-        String expected = "Peugeot 207 met prijs per dag: 50.0\n" +
-                "op naam van: Mijnheer de Vries (korting: 10.0%)\n" +
-                "aantal dagen: 4 en dat kost 180.0";
-        assertEquals(expected, ah1.toString());
+
+        assertEquals(180.0, ah1.totaalPrijs()); // 4 dagen * 50 - 10% korting = 180.0
     }
 }

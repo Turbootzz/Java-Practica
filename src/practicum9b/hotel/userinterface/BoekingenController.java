@@ -9,6 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import practicum9b.hotel.model.Hotel;
 import practicum9b.hotel.model.KamerType;
+
+import java.time.LocalDate;
 import java.util.List;
 
 public class BoekingenController {
@@ -45,7 +47,6 @@ public class BoekingenController {
 
     @FXML
     public void updateBoekingenOverzicht() {
-        // Code om het boekingen-overzicht te updaten
         if(naam.getText() == null || naam.getText().isEmpty()) {
             titel.setText("naam is niet gevuld!");
             titel.setStyle("-fx-text-fill: red;");
@@ -68,6 +69,32 @@ public class BoekingenController {
         }
         if(kamertype.getValue() == null) {
             titel.setText("kamertype is niet gevuld!");
+            titel.setStyle("-fx-text-fill: red;");
+            return;
+        }
+
+        if(aankomstdatum.getValue().isBefore(LocalDate.now())) {
+            titel.setText("Aankomstdatum is eerder dan vandaag!");
+            titel.setStyle("-fx-text-fill: red;");
+            return;
+        }
+        if(vertrekdatum.getValue().isBefore(LocalDate.now())) {
+            titel.setText("Vertrekdatum is eerder dan vandaag!");
+            titel.setStyle("-fx-text-fill: red;");
+            return;
+        }
+        if(vertrekdatum.getValue().isEqual(LocalDate.now())) {
+            titel.setText("Vertrekdatum is gelijk aan vandaag!");
+            titel.setStyle("-fx-text-fill: red;");
+            return;
+        }
+        if(vertrekdatum.getValue().isBefore(aankomstdatum.getValue())) {
+            titel.setText("Vertrekdatum is eerder dan de aankomstdatum!");
+            titel.setStyle("-fx-text-fill: red;");
+            return;
+        }
+        if(vertrekdatum.getValue().isEqual(aankomstdatum.getValue())) {
+            titel.setText("Vertrekdatum is gelijk aan de aankomstdatum!");
             titel.setStyle("-fx-text-fill: red;");
             return;
         }

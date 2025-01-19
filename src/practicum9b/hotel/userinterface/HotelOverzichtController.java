@@ -17,19 +17,25 @@ import javafx.scene.control.ListView;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HotelOverzichtController {
-    @FXML private Label hotelnaamLabel;
-    @FXML private ListView boekingenListView;
-    @FXML private DatePicker overzichtDatePicker;
+    @FXML
+    private Label hotelnaamLabel;
+    @FXML
+    private ListView<String> boekingenListView;
+    @FXML
+    private DatePicker overzichtDatePicker;
 
     private Hotel hotel = Hotel.getHotel();
 
     public void initialize() {
         hotelnaamLabel.setText("Boekingen hotel " + hotel.getNaam());
         overzichtDatePicker.setValue(LocalDate.now());
+        // dit update de data
+
         toonBoekingen();
     }
 
@@ -45,15 +51,15 @@ public class HotelOverzichtController {
 
     public void nieuweBoeking(ActionEvent actionEvent) {
         try {
-        String fxmlPagina = "Boekingen.fxml";
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPagina));
-        Parent root = loader.load();
+            String fxmlPagina = "Boekingen.fxml";
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPagina));
+            Parent root = loader.load();
 
             Stage stage = new Stage();
-        stage.setTitle("Boeking");
+            stage.setTitle("Boeking");
 
-        Stage huidigeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        huidigeStage.hide();
+            Stage huidigeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            huidigeStage.hide();
 
             stage.setOnHiding(event -> {
                 huidigeStage.show();
@@ -67,14 +73,22 @@ public class HotelOverzichtController {
     }
 
     public void toonBoekingen() {
-        String hotelBoekingenString = hotel.toString();
+        LocalDate selectedDate = overzichtDatePicker.getValue();
 
-        String[] boekingenArray = hotelBoekingenString.split("\n");
         ObservableList<String> boekingen = FXCollections.observableArrayList();
 
-        for (int i = 1; i < boekingenArray.length; i++) {
-            boekingen.add(boekingenArray[i].trim());
-        }
+        for (Boeking boeking : hotel.getBoekingen()) {
+            if (!boeking.getAankomstDatum().isAfter(selectedDate) && !boeking.getVertrekDatum().isBefore(selectedDate))
+                boekingen.add(
+                        String.format(
+                                "Naam: %s, Aankomst: %s, Vertrek: %s",
+                                boeking.getBoeker().getNaam(),
+                                boeking.getAankomstDatum(),
+                                boeking.getVertrekDatum()
+                        )
+                );
+            }
+
         boekingenListView.setItems(boekingen);
     }
 }

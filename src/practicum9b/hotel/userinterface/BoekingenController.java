@@ -7,14 +7,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import practicum9b.hotel.model.Boeking;
 import practicum9b.hotel.model.Hotel;
-import practicum9b.hotel.model.Kamer;
 import practicum9b.hotel.model.KamerType;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class BoekingenController {
@@ -98,7 +92,7 @@ public class BoekingenController {
     @FXML
     public void Reset(ActionEvent event) {
         titel.setText("Voer gegevens in!");
-        titel.setStyle("-fx-text-fill: default;");
+        titel.setStyle("-fx-text-fill: black;");
         naam.setText("");
         adres.setText("");
         aankomstdatum.setValue(null);

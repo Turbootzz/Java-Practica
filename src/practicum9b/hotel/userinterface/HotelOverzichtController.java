@@ -44,7 +44,6 @@ public class HotelOverzichtController {
     }
 
     public void nieuweBoeking(ActionEvent actionEvent) {
-        System.out.println("nieuweBoeking() is nog niet geïmplementeerd!");
         try {
         String fxmlPagina = "Boekingen.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPagina));

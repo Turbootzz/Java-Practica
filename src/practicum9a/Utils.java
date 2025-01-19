@@ -6,7 +6,7 @@ public class Utils {
     private static int euroBedragenAangeroepen = 0;
 
     public static String euroBedrag(double bedrag) {
-        return "€ " + euroBedrag(bedrag, 2);
+        return euroBedrag(bedrag, 2);
     }
 
     public static String euroBedrag(double bedrag, int precisie) {

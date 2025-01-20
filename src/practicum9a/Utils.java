@@ -4,9 +4,10 @@ import java.util.Locale;
 public class Utils {
 
     private static int euroBedragenAangeroepen = 0;
-
+    private static final int DEFAULT_PRECISIE = 2;
+    
     public static String euroBedrag(double bedrag) {
-        return euroBedrag(bedrag, 2);
+        return euroBedrag(bedrag, DEFAULT_PRECISIE);
     }
 
     public static String euroBedrag(double bedrag, int precisie) {

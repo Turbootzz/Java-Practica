@@ -15,10 +15,11 @@ public class Fiets extends Voertuig {
         return nieuwprijs * Math.pow(0.9, jarenVerschil);
     }
 
-    public boolean equals(Goed g) {
-        if (this == g) return true;
-        if (g == null || getClass() != g.getClass()) return false;
-        Fiets fiets = (Fiets) g;
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Fiets)) return false;
+        if (!super.equals(obj)) return false;
+        Fiets fiets = (Fiets) obj;
         return framenummer == fiets.framenummer;
     }
 }

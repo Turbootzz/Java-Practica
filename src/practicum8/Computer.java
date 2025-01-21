@@ -21,10 +21,11 @@ public class Computer implements Goed {
         return aanschafPrijs * Math.pow(0.6, jarenVerschil);
     }
 
-    public boolean equals(Goed g) {
-        if (this == g) return true;
-        if (g == null || getClass() != g.getClass()) return false;
-        Computer computer = (Computer) g;
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Computer)) return false;
+        if (!super.equals(obj)) return false;
+        Computer computer = (Computer) obj;
         return macAdres.equals(computer.macAdres);
     }
 

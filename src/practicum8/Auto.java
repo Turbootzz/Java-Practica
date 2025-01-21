@@ -17,7 +17,8 @@ public class Auto extends Voertuig {
 
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
+        if (!(obj instanceof Auto)) return false;
+        if (!super.equals(obj)) return false;
         Auto auto = (Auto) obj;
         return kenteken.equals(auto.kenteken);
     }

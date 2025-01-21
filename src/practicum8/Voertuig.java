@@ -12,10 +12,10 @@ abstract class Voertuig implements Goed {
         this.bouwjaar = jr;
     }
 
-    public boolean equals(Goed g) {
-        if (this == g) return true;
-        if (g == null || getClass() != g.getClass()) return false;
-        Voertuig voertuig = (Voertuig) g;
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Voertuig voertuig = (Voertuig) obj;
         return type.equals(voertuig.type) && bouwjaar == voertuig.bouwjaar;
     }
 

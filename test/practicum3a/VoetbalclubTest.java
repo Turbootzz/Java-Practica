@@ -43,4 +43,25 @@ class VoetbalclubTest {
         String actual = club.toString();
         assertEquals(expected, actual);
     }
+    @Test
+    public void test_punten_optelling_gewonnen() {
+        Voetbalclub feij = new Voetbalclub("Feijenoord");
+        feij.verwerkResultaat('w');
+        int actual = feij.aantalPunten();
+        assertEquals(3, actual);
+    }
+    @Test
+    public void test_punten_optelling_gelijk() {
+        Voetbalclub feij = new Voetbalclub("Feijenoord");
+        feij.verwerkResultaat('g');
+        int actual = feij.aantalPunten();
+        assertEquals(1, actual);
+    }
+    @Test
+    public void test_punten_optelling_verloren() {
+        Voetbalclub feij = new Voetbalclub("Feijenoord");
+        feij.verwerkResultaat('v');
+        int actual = feij.aantalPunten();
+        assertEquals(0, actual);
+    }
 }

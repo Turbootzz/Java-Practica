@@ -16,7 +16,9 @@ abstract class Voertuig implements Goed {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Voertuig voertuig = (Voertuig) obj;
-        return type.equals(voertuig.type) && bouwjaar == voertuig.bouwjaar;
+        return this.type.equals(voertuig.type) 
+            && this.bouwjaar == voertuig.bouwjaar
+            && this.nieuwprijs ==voertuig.nieuwprijs;
     }
 
     public String toString() {
